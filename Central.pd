@@ -85,6 +85,8 @@
 #X obj 745 369 dac~;
 #X obj 927 146 vsl 15 128 0 1.5 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
+#X text 594 164 osc Change;
+#X text 498 166 osc activate;
 #X connect 1 0 0 0;
 #X connect 6 0 7 0;
 #X connect 7 0 9 0;
