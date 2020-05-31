@@ -1,6 +1,6 @@
-#N canvas 247 394 1017 537 12;
+#N canvas -10 34 1221 607 12;
 #X msg 14 39 \; pd dsp \$1;
-#X obj 13 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 13 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #N canvas 937 505 546 368 oscSend 0;
 #X msg 158 207 disconnect;
@@ -77,27 +77,27 @@
 #X text 57 8 Turns sound on and off;
 #X text 102 114 Sends and recieves messages to and from Unity;
 #X obj 590 198 track1;
+#X obj 682 196 track2;
+#X obj 776 198 track3;
 #X obj 662 308 *~;
 #X obj 754 305 *~;
 #X obj 649 372 dac~;
 #X obj 745 369 dac~;
-#X obj 927 146 vsl 15 128 0 1.5 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+#X obj 925 155 vsl 15 128 0 1.5 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3900 1;
 #X text 594 164 osc Change;
 #X text 498 166 osc activate;
-#X obj 682 196 track2;
-#X obj 768 200 track3;
 #X connect 1 0 0 0;
 #X connect 6 0 7 0;
 #X connect 7 0 9 0;
 #X connect 8 0 7 0;
-#X connect 12 0 13 0;
+#X connect 12 0 15 0;
 #X connect 13 0 15 0;
-#X connect 13 0 15 1;
 #X connect 14 0 16 0;
-#X connect 14 0 16 1;
-#X connect 17 0 14 1;
-#X connect 17 0 13 1;
-#X connect 20 0 13 1;
-#X connect 21 0 14 0;
+#X connect 15 0 17 0;
+#X connect 15 0 17 1;
+#X connect 16 0 18 0;
+#X connect 16 0 18 1;
+#X connect 19 0 16 1;
+#X connect 19 0 15 1;
 #X coords 0 0 10 1 85 60 1 100 100;
