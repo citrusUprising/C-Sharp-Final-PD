@@ -1,13 +1,13 @@
-#N canvas 952 0 958 966 12;
+#N canvas 671 51 958 966 12;
 #X obj 376 793 outlet~;
 #X obj 470 208 metro 4000;
 #X floatatom 558 188 5 0 0 0 - - -;
-#X obj 470 174 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 470 174 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 559 158 4000;
 #X obj 426 133 inlet Activate;
 #X obj 401 286 inlet Change;
-#N canvas 106 144 834 669 tune1 1;
+#N canvas 39 130 834 669 tune1 1;
 #X obj 123 35 inlet;
 #X text 9 603 notes;
 #X obj 215 170 metro 4000;
@@ -15,7 +15,7 @@
 #X obj 163 223 f;
 #X obj 211 223 + 1;
 #X obj 336 77 loadbang;
-#X obj 215 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 215 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 336 114 500;
 #X text 26 170 The tempo of the sequence;
@@ -54,6 +54,7 @@
 #X obj 662 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 681 369 garbage pings;
+#X obj 212 74 loadbang;
 #X connect 0 0 7 0;
 #X connect 2 0 4 0;
 #X connect 3 0 2 1;
@@ -108,8 +109,9 @@
 #X connect 39 0 12 0;
 #X connect 40 0 17 0;
 #X connect 41 0 17 0;
+#X connect 44 0 7 0;
 #X restore 250 509 pd tune1;
-#N canvas 548 249 826 701 tune2 1;
+#N canvas 329 325 826 701 tune2 0;
 #X obj 123 35 inlet;
 #X text 8 598 notes;
 #X obj 215 170 metro 4000;
@@ -212,7 +214,7 @@
 #X connect 40 0 17 0;
 #X connect 43 0 12 0;
 #X restore 327 508 pd tune2;
-#N canvas 940 115 833 699 tune3 1;
+#N canvas 824 417 833 699 tune3 0;
 #X obj 123 35 inlet;
 #X text 9 552 notes;
 #X obj 215 170 metro 4000;
@@ -220,7 +222,7 @@
 #X obj 163 223 f;
 #X obj 211 223 + 1;
 #X obj 336 77 loadbang;
-#X obj 215 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 215 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 336 114 500;
 #X text 26 170 The tempo of the sequence;
@@ -301,7 +303,7 @@
 #X connect 39 0 17 0;
 #X connect 40 0 17 0;
 #X restore 393 507 pd tune3;
-#N canvas 997 120 778 696 tune4 0;
+#N canvas 1055 379 778 696 tune4 0;
 #X obj 123 35 inlet;
 #X text 9 552 notes;
 #X obj 215 170 metro 4000;
@@ -419,6 +421,7 @@
 #X msg 406 345 \$2;
 #X obj 406 318 pack f f;
 #X floatatom 404 372 5 0 0 0 - - -;
+#X obj 449 65 loadbang;
 #X connect 1 0 32 0;
 #X connect 2 0 1 1;
 #X connect 3 0 1 0;
@@ -469,3 +472,4 @@
 #X connect 36 0 38 0;
 #X connect 37 0 36 0;
 #X connect 38 0 34 0;
+#X connect 39 0 3 0;
