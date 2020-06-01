@@ -1,6 +1,6 @@
 #N canvas 768 173 1099 530 12;
 #X msg 13 34 \; pd dsp \$1;
-#X obj 13 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 13 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #N canvas 937 505 546 368 oscSend 0;
 #X msg 158 207 disconnect;
@@ -93,12 +93,12 @@
 #X obj 788 198 track3;
 #X obj 577 265 *~;
 #X obj 789 265 *~;
-#X obj 566 311 dac~;
+#X obj 478 338 dac~;
 #X obj 778 310 dac~;
 #X obj 905 134 vsl 15 128 0 1.5 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 9100 1;
 #X obj 578 352 tabwrite~ array_waves;
-#X obj 857 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 857 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array array_waves 2000 float 1;
@@ -381,7 +381,17 @@
 #X obj 562 145 r osctrig;
 #X obj 491 145 r oscxpos;
 #X obj 632 145 r oscypos;
-#X obj 704 145 r oscground;
+#X obj 732 143 r oscground;
+#X obj 821 143 r oscrun;
+#X obj 490 278 r oscdash;
+#N canvas 0 50 450 300 distortion 0;
+#X obj 52 38 inlet dash;
+#X obj 176 231 outlet~;
+#X obj 176 42 inlet~ music;
+#X connect 2 0 1 0;
+#X restore 490 304 pd distortion;
+#X obj 578 396 s~ fourierTrans;
+#X obj 262 383 r~ fourierTrans;
 #X connect 1 0 0 0;
 #X connect 6 0 7 0;
 #X connect 7 0 9 0;
@@ -389,9 +399,9 @@
 #X connect 12 0 15 0;
 #X connect 13 0 15 0;
 #X connect 14 0 16 0;
-#X connect 15 0 17 0;
-#X connect 15 0 17 1;
 #X connect 15 0 20 0;
+#X connect 15 0 31 1;
+#X connect 15 0 32 0;
 #X connect 16 0 18 0;
 #X connect 16 0 18 1;
 #X connect 19 0 16 1;
@@ -401,4 +411,7 @@
 #X connect 25 0 12 0;
 #X connect 25 0 13 0;
 #X connect 26 0 12 1;
+#X connect 30 0 31 0;
+#X connect 31 0 17 0;
+#X connect 31 0 17 1;
 #X coords 0 0 10 1 85 60 1 100 100;
