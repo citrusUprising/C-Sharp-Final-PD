@@ -44,6 +44,13 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.runInBackground = true; //allows unity to update when not in focus
+
+        //************* Instantiate the OSC Handler...
+        OSCHandler.Instance.Init ();
+        OSCHandler.Instance.SendMessageToClient ("pd", "/unity/trigger", "ready");
+        //*************
+
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
@@ -56,7 +63,14 @@ public class Movement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
+        float xpos = rb.position.x;
+        float ypos = rb.position.y;
+        float run = rb.velocity.x;
         Vector2 dir = new Vector2(x, y);
+
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/xpos", xpos);
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/ypos", ypos);
+        if (coll.onGround) OSCHandler.Instance.SendMessageToClient("pd", "/unity/run", run);
 
         Walk(dir);
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
@@ -80,7 +94,7 @@ public class Movement : MonoBehaviour
             wallJumped = false;
             GetComponent<BetterJumping>().enabled = true;
         }
-        
+
         if (wallGrab && !isDashing)
         {
             rb.gravityScale = 0;
@@ -120,6 +134,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && !hasDashed)
         {
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/dash", 100);
             if(xRaw != 0 || yRaw != 0)
                 Dash(xRaw, yRaw);
         }
@@ -151,7 +166,23 @@ public class Movement : MonoBehaviour
             anim.Flip(side);
         }
 
+        //************* Routine for receiving the OSC...
+		OSCHandler.Instance.UpdateLogs();
+		Dictionary<string, ServerLog> servers = new Dictionary<string, ServerLog>();
+		servers = OSCHandler.Instance.Servers;
 
+		// foreach (KeyValuePair<string, ServerLog> item in servers) {
+		// 	// If we have received at least one packet,
+		// 	// show the last received from the log in the Debug console
+		// 	if (item.Value.log.Count > 0) {
+		// 		int lastPacketIndex = item.Value.packets.Count - 1;
+        //
+		// 		//get address and data packet
+		// 		countText.text = item.Value.packets [lastPacketIndex].Address.ToString ();
+		// 		countText.text += item.Value.packets [lastPacketIndex].Data [0].ToString ();
+		// 	}
+		// }
+		//*************
     }
 
     void GroundTouch()
