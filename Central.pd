@@ -514,7 +514,7 @@
 #X obj 347 364 r~ stime;
 #X obj 61 215 s~ stime;
 #X obj 211 179 metro 2000;
-#X obj 156 466 select 0 1;
+#X obj 144 449 select 0 1;
 #X obj 500 358 r~ stime;
 #X obj 500 430 *~;
 #X floatatom 544 434 5 0 0 0 - - -;
@@ -522,14 +522,14 @@
 #X floatatom 387 440 5 0 0 0 - - -;
 #X obj 212 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 156 411 pack f f;
-#X msg 156 437 \$2;
+#X obj 144 394 pack f f;
+#X msg 144 420 \$2;
 #X obj 188 253 select 0 1;
 #X obj 211 228 mod 2;
 #X obj 211 203 f;
 #X obj 273 203 + 1;
-#X msg 220 338 0;
-#X msg 256 337 1;
+#X msg 208 321 0;
+#X msg 244 320 1;
 #X msg 117 507 0;
 #X msg 159 507 1;
 #X obj 544 409 r volNorm;
@@ -556,8 +556,8 @@
 #X connect 17 0 29 0;
 #X connect 18 0 33 0;
 #X connect 18 0 42 0;
-#X connect 18 1 41 0;
 #X connect 18 1 34 0;
+#X connect 18 1 41 0;
 #X connect 19 0 14 0;
 #X connect 20 0 11 0;
 #X connect 21 0 20 1;
