@@ -7,7 +7,7 @@
 #X msg 355 107 4000;
 #X obj 101 85 inlet Activate;
 #X obj 423 77 inlet Change;
-#N canvas 1062 216 834 669 tune1 0;
+#N canvas 1062 216 834 669 tune1 1;
 #X obj 123 35 inlet;
 #X text 9 603 notes;
 #X obj 215 170 metro 4000;
@@ -15,7 +15,7 @@
 #X obj 163 223 f;
 #X obj 211 223 + 1;
 #X obj 336 77 loadbang;
-#X obj 215 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 215 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X msg 336 114 500;
 #X text 26 170 The tempo of the sequence;
