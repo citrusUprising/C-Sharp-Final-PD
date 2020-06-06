@@ -1,4 +1,4 @@
-#N canvas 1003 396 830 496 10;
+#N canvas 1067 398 830 496 10;
 #X obj 14 111 splitphase;
 #X obj 220 156 * 3;
 #X obj 261 157 * 3;
@@ -520,7 +520,7 @@
 #X obj 302 204 s~ n3;
 #X obj 346 204 s~ a1;
 #X obj 222 22 hsl 128 15 0 1 0 1 \$0-heel \$0-heelf heel 38 7 1 8 -262144
--1 -1 6344 1;
+-1 -1 6350 1;
 #X obj 220 134 r \$0-heel;
 #X obj 261 113 r \$0-roll;
 #X obj 302 134 r \$0-ball;
@@ -528,7 +528,7 @@
 #X obj 222 42 hsl 128 15 0 1 0 1 \$0-roll empty roll 38 7 1 8 -262144
 -1 -1 2200 1;
 #X obj 222 62 hsl 128 15 0 1 0 1 \$0-ball \$0-ballf ball 38 7 1 8 -262144
--1 -1 6356 1;
+-1 -1 6350 1;
 #X obj 220 178 sig~;
 #X obj 261 180 sig~;
 #X obj 302 179 sig~;
@@ -1321,9 +1321,10 @@
 #X obj 440 209 -;
 #X obj 465 57 loadbang;
 #X obj 160 112 loadbang;
-#X obj 28 44 inlet;
 #X obj 41 262 outlet~;
 #X text 162 291 ASPress Walk 2;
+#X obj 28 44 inlet ground;
+#X obj 132 46 inlet run;
 #X connect 0 0 23 0;
 #X connect 0 1 27 0;
 #X connect 1 0 19 0;
@@ -1343,7 +1344,7 @@
 #X connect 22 0 11 0;
 #X connect 23 0 4 0;
 #X connect 24 0 25 1;
-#X connect 25 0 43 0;
+#X connect 25 0 42 0;
 #X connect 26 0 0 0;
 #X connect 27 0 24 0;
 #X connect 28 0 29 0;
