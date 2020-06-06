@@ -1,6 +1,6 @@
-#N canvas 63 195 1099 530 12;
+#N canvas 740 223 1099 521 12;
 #X msg 13 34 \; pd dsp \$1;
-#X obj 13 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 13 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #N canvas 937 505 546 368 oscSend 0;
 #X msg 158 207 disconnect;
@@ -97,9 +97,9 @@
 #X obj 478 338 dac~;
 #X obj 778 310 dac~;
 #X obj 923 105 vsl 15 128 0 1.5 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4600 1;
+-1 -1 0 1;
 #X obj 578 352 tabwrite~ array_waves;
-#X obj 857 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 857 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array array_waves 2000 float 1;
@@ -664,6 +664,7 @@
 #X connect 25 0 12 0;
 #X connect 25 0 13 0;
 #X connect 26 0 12 1;
+#X connect 27 0 13 1;
 #X connect 30 0 31 0;
 #X connect 31 0 17 0;
 #X connect 31 0 17 1;

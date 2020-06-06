@@ -1,0 +1,177 @@
+#N canvas 323 281 1470 568 12;
+#X obj 189 531 outlet~;
+#X obj 132 222 * 2;
+#X obj 411 159 loadbang;
+#X floatatom 464 334 5 0 0 0 - - -;
+#X obj 189 499 *~;
+#X obj 516 486 vline~;
+#X obj 516 510 *~ 1024;
+#X obj 516 532 s~ stime;
+#X msg 516 465 0 \, 1 \$1 0;
+#X obj 516 394 bng 25 250 50 0 empty empty tweet 0 -9 1 8 -262144 -1
+-1;
+#X obj 446 395 loadbang;
+#X obj 516 445 f 1;
+#X obj 114 142 r~ stime;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array bp1 1024 float 3;
+#A 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#A 1000 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
+#X coords 0 1.5 1023 0.5 750 500 1 0 0;
+#X restore 689 39 graph;
+#X obj 114 173 tabread~ bp1;
+#X obj 114 246 *~;
+#X text 344 392 adsr program;
+#N canvas 448 258 641 584 adsr 0;
+#X obj 290 341 vline~;
+#X obj 290 392 outlet~;
+#X obj 33 206 inlet ping;
+#X obj 119 102 inlet attackTime;
+#X obj 186 130 inlet decayValue;
+#X obj 248 159 inlet decayStop;
+#X obj 467 122 inlet release;
+#X floatatom 120 153 5 0 0 0 - - -;
+#X floatatom 187 176 5 0 0 0 - - -;
+#X floatatom 248 193 5 0 0 0 - - -;
+#X floatatom 472 166 5 0 0 0 - - -;
+#X text 65 481 https://forum.pdpatchrepo.info/topic/5315/line-line-vline-and-adsr-envelopes
+;
+#X obj 270 277 pack f f f f f;
+#X msg 270 307 0 \, 1 \$2 \, \$3 \$4 \$2 \, 0 50 \$5;
+#X floatatom 505 288 5 0 0 0 - - -;
+#X obj 398 211 -;
+#X floatatom 507 225 5 0 0 0 - - -;
+#X obj 521 157 loadbang;
+#X msg 520 186 100;
+#X obj 153 340 print adsrTest;
+#X connect 0 0 1 0;
+#X connect 2 0 12 0;
+#X connect 3 0 7 0;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 10 0;
+#X connect 7 0 12 1;
+#X connect 8 0 12 2;
+#X connect 9 0 12 3;
+#X connect 10 0 15 0;
+#X connect 12 0 13 0;
+#X connect 13 0 0 0;
+#X connect 13 0 19 0;
+#X connect 15 0 12 4;
+#X connect 15 0 14 0;
+#X connect 16 0 15 1;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X restore 345 369 pd adsr;
+#X floatatom 356 264 5 0 0 0 - - -;
+#X floatatom 392 286 5 0 0 0 - - -;
+#X floatatom 428 311 5 0 0 0 - - -;
+#X msg 464 234 500;
+#X obj 411 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 95 452 *~, f 5;
+#X msg 356 235 100;
+#X msg 428 233 100;
+#X msg 392 234 0.6;
+#X obj 247 284 loadbang;
+#X obj 247 309 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 114 325 osc~;
+#X obj 170 324 osc~;
+#X obj 62 324 osc~;
+#X msg 207 324 -1;
+#X obj 95 428 +~;
+#X obj 261 133 outlet pitch;
+#X obj 261 20 loadbang;
+#X floatatom 261 104 5 0 0 0 - - -;
+#X text 302 103 Pitch Control;
+#X msg 261 60 40;
+#X msg 295 60 45;
+#X msg 227 61 35;
+#X obj 114 298 *~ 1;
+#X obj 61 300 *~ 0.2;
+#X obj 171 298 *~ -0.2;
+#X obj 218 178 inlet song;
+#X obj 534 180 inlet adsr;
+#X obj 586 267 inlet pause;
+#X text 8 262 modify this;
+#X text 321 19 change messages to change pitch;
+#X msg 516 75 \; bp1 const 1;
+#X text 507 112 resets bp graph;
+#X connect 1 0 15 1;
+#X connect 2 0 22 0;
+#X connect 3 0 17 4;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 5 0;
+#X connect 9 0 11 0;
+#X connect 10 0 11 0;
+#X connect 11 0 8 0;
+#X connect 12 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 41 0;
+#X connect 15 0 42 0;
+#X connect 15 0 43 0;
+#X connect 17 0 4 1;
+#X connect 18 0 17 1;
+#X connect 19 0 17 2;
+#X connect 20 0 17 3;
+#X connect 21 0 3 0;
+#X connect 22 0 24 0;
+#X connect 22 0 26 0;
+#X connect 22 0 25 0;
+#X connect 22 0 21 0;
+#X connect 23 0 4 0;
+#X connect 24 0 18 0;
+#X connect 25 0 20 0;
+#X connect 26 0 19 0;
+#X connect 27 0 28 0;
+#X connect 28 0 32 0;
+#X connect 29 0 33 1;
+#X connect 30 0 23 1;
+#X connect 31 0 33 0;
+#X connect 32 0 30 1;
+#X connect 33 0 23 0;
+#X connect 35 0 38 0;
+#X connect 36 0 34 0;
+#X connect 38 0 36 0;
+#X connect 39 0 36 0;
+#X connect 40 0 36 0;
+#X connect 41 0 29 0;
+#X connect 42 0 31 0;
+#X connect 43 0 30 0;
+#X connect 44 0 1 0;
+#X connect 45 0 3 0;
+#X connect 45 0 11 1;
+#X connect 46 0 9 0;
+#X connect 46 0 17 0;
