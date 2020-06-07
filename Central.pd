@@ -1,8 +1,8 @@
-#N canvas 553 245 1099 570 12;
+#N canvas 797 330 1099 570 12;
 #X msg 13 34 \; pd dsp \$1;
 #X obj 13 12 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#N canvas 937 505 546 368 oscSend 0;
+#N canvas 877 552 546 368 oscSend 0;
 #X msg 158 207 disconnect;
 #X obj 61 253 netsend -u -b;
 #X obj 59 55 list prepend send;
@@ -20,7 +20,7 @@
 #X connect 6 0 1 0;
 #X connect 8 0 1 0;
 #X restore 15 114 pd oscSend;
-#N canvas 39 154 944 730 oscRecieve 0;
+#N canvas 617 203 944 730 oscRecieve 0;
 #X obj 55 184 netreceive -u -b;
 #X msg 78 143 listen 0;
 #X text 152 143 stop listening;
@@ -81,7 +81,7 @@
 #X connect 24 0 23 0;
 #X connect 30 0 12 0;
 #X connect 31 0 29 0;
-#X restore 7 158 pd oscRecieve;
+#X restore 15 155 pd oscRecieve;
 #X text 174 281 creation arguments are OSC address;
 #X text 156 241 set message to change OSC address;
 #X floatatom 20 197 5 0 0 0 - - -;
@@ -98,7 +98,7 @@
 #X obj 478 338 dac~;
 #X obj 789 301 dac~;
 #X obj 715 92 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 7200 1;
 #X obj 578 352 tabwrite~ array_waves;
 #X obj 857 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;

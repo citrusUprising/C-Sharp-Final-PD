@@ -1,4 +1,4 @@
-#N canvas 1069 461 830 496 10;
+#N canvas 160 350 830 496 10;
 #X obj 14 111 splitphase;
 #X obj 356 184 * 3;
 #X obj 397 185 * 3;
@@ -520,7 +520,7 @@
 #X obj 438 232 s~ n3;
 #X obj 482 232 s~ a1;
 #X obj 291 40 hsl 128 15 0 1 0 1 \$0-heel \$0-heelf heel 38 7 1 8 -262144
--1 -1 6386 1;
+-1 -1 6350 1;
 #X obj 356 162 r \$0-heel;
 #X obj 397 141 r \$0-roll;
 #X obj 438 162 r \$0-ball;
@@ -528,7 +528,7 @@
 #X obj 291 60 hsl 128 15 0 1 0 1 \$0-roll empty roll 38 7 1 8 -262144
 -1 -1 2200 1;
 #X obj 291 80 hsl 128 15 0 1 0 1 \$0-ball \$0-ballf ball 38 7 1 8 -262144
--1 -1 6314 1;
+-1 -1 6350 1;
 #X obj 356 206 sig~;
 #X obj 397 208 sig~;
 #X obj 438 207 sig~;
@@ -1307,7 +1307,6 @@
 #X connect 17 0 5 0;
 #X connect 17 0 1 0;
 #X restore 79 138 pd foot;
-#X obj 669 6 r walkspeed;
 #X obj 668 89 sig~;
 #X obj 668 143 -~;
 #X obj 683 118 lop~ 0.5;
@@ -1346,23 +1345,23 @@
 #X connect 22 0 11 0;
 #X connect 23 0 4 0;
 #X connect 24 0 25 1;
-#X connect 25 0 42 0;
-#X connect 26 0 46 0;
+#X connect 25 0 41 0;
+#X connect 26 0 45 0;
 #X connect 27 0 24 0;
-#X connect 29 0 30 0;
+#X connect 28 0 29 0;
+#X connect 28 0 30 0;
 #X connect 29 0 31 0;
-#X connect 30 0 32 0;
-#X connect 31 0 30 1;
-#X connect 32 0 36 0;
-#X connect 33 0 32 0;
-#X connect 34 0 35 0;
-#X connect 34 0 38 0;
-#X connect 36 0 34 0;
-#X connect 38 0 39 0;
-#X connect 38 1 39 1;
-#X connect 39 0 37 0;
-#X connect 40 0 33 0;
-#X connect 41 0 5 0;
-#X connect 44 0 0 0;
-#X connect 44 0 47 0;
-#X connect 45 0 29 0;
+#X connect 30 0 29 1;
+#X connect 31 0 35 0;
+#X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 33 0 37 0;
+#X connect 35 0 33 0;
+#X connect 37 0 38 0;
+#X connect 37 1 38 1;
+#X connect 38 0 36 0;
+#X connect 39 0 32 0;
+#X connect 40 0 5 0;
+#X connect 43 0 0 0;
+#X connect 43 0 46 0;
+#X connect 44 0 28 0;
