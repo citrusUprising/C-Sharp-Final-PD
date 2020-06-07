@@ -70,8 +70,8 @@ public class Movement : MonoBehaviour
 
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/xpos", xpos);
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/ypos", ypos);
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/run", run);
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/grounded", 0);
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/run", run / 8);
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/grounded", "ready");
 
         Walk(dir);
         anim.SetHorizontalMovement(x, y, rb.velocity.y);

@@ -1,4 +1,4 @@
-#N canvas 883 329 830 496 10;
+#N canvas 1015 344 830 496 10;
 #X obj 14 111 splitphase;
 #X obj 356 184 * 3;
 #X obj 397 185 * 3;
@@ -520,7 +520,7 @@
 #X obj 438 232 s~ n3;
 #X obj 482 232 s~ a1;
 #X obj 291 40 hsl 128 15 0 1 0 1 \$0-heel \$0-heelf heel 38 7 1 8 -262144
--1 -1 6336 1;
+-1 -1 6350 1;
 #X obj 356 162 r \$0-heel;
 #X obj 397 141 r \$0-roll;
 #X obj 438 162 r \$0-ball;
@@ -528,7 +528,7 @@
 #X obj 291 60 hsl 128 15 0 1 0 1 \$0-roll empty roll 38 7 1 8 -262144
 -1 -1 2200 1;
 #X obj 291 80 hsl 128 15 0 1 0 1 \$0-ball \$0-ballf ball 38 7 1 8 -262144
--1 -1 6364 1;
+-1 -1 6350 1;
 #X obj 356 206 sig~;
 #X obj 397 208 sig~;
 #X obj 438 207 sig~;
@@ -1039,7 +1039,7 @@
 #X obj 44 47 > 0.5;
 #X obj 20 -2 inlet~;
 #X obj 0 90 outlet~;
-#N canvas 126 61 245 451 gravel 0;
+#N canvas 126 61 245 432 gravel 0;
 #X obj 1 151 inlet~;
 #X obj 40 431 outlet~;
 #X obj 189 0 inlet;
@@ -1174,7 +1174,7 @@
 #X connect 8 0 1 0;
 #X restore 79 163 pd texturesource;
 #X obj 39 215 +~;
-#X obj 16 82 r walkspeed;
+#X obj 28 17 r walkspeed;
 #N canvas 43 30 514 361 foot 0;
 #X obj 20 130 clip~ 0 0.33333;
 #X obj 283 130 clip~ 0.666666 1;
@@ -1308,22 +1308,23 @@
 #X connect 17 0 1 0;
 #X restore 79 138 pd foot;
 #X obj 669 6 r walkspeed;
-#X obj 669 27 sig~;
-#X obj 669 81 -~;
-#X obj 684 56 lop~ 0.5;
-#X obj 645 113 snapshot~;
-#X obj 592 84 metro 100;
-#X obj 645 153 + 0.5;
-#X obj 645 235 s \$0-ballf;
-#X obj 645 133 * 1.7;
-#X obj 567 235 s \$0-heelf;
-#X obj 567 188 swap 1;
-#X obj 567 213 -;
-#X obj 592 61 loadbang;
+#X obj 668 89 sig~;
+#X obj 668 143 -~;
+#X obj 683 118 lop~ 0.5;
+#X obj 644 175 snapshot~;
+#X obj 591 146 metro 100;
+#X obj 644 215 + 0.5;
+#X obj 644 297 s \$0-ballf;
+#X obj 644 195 * 1.7;
+#X obj 566 297 s \$0-heelf;
+#X obj 566 250 swap 1;
+#X obj 566 275 -;
+#X obj 591 123 loadbang;
 #X obj 160 112 loadbang;
 #X obj 38 299 outlet~;
 #X text 162 291 ASPress Walk 2;
-#X obj 132 46 inlet run;
+#X obj 12 70 inlet run;
+#X obj 667 47 inlet run;
 #X connect 0 0 23 0;
 #X connect 0 1 27 0;
 #X connect 1 0 19 0;
@@ -1344,9 +1345,7 @@
 #X connect 23 0 4 0;
 #X connect 24 0 25 1;
 #X connect 25 0 42 0;
-#X connect 26 0 0 0;
 #X connect 27 0 24 0;
-#X connect 28 0 29 0;
 #X connect 29 0 30 0;
 #X connect 29 0 31 0;
 #X connect 30 0 32 0;
@@ -1361,3 +1360,5 @@
 #X connect 39 0 37 0;
 #X connect 40 0 33 0;
 #X connect 41 0 5 0;
+#X connect 44 0 0 0;
+#X connect 45 0 29 0;
