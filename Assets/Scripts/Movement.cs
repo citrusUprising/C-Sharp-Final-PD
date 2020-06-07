@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour
     public bool wallJumped;
     public bool wallSlide;
     public bool isDashing;
+    public bool isOnGround = true;
 
     [Space]
 
@@ -49,6 +50,7 @@ public class Movement : MonoBehaviour
         //************* Instantiate the OSC Handler...
         OSCHandler.Instance.Init ();
         OSCHandler.Instance.SendMessageToClient ("pd", "/unity/trigger", "ready");
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/grounded", "ready");
         //*************
 
         coll = GetComponent<Collision>();
@@ -66,12 +68,23 @@ public class Movement : MonoBehaviour
         float xpos = rb.position.x;
         float ypos = rb.position.y;
         float run = rb.velocity.x;
+        if (run > 7) run = 7;
         Vector2 dir = new Vector2(x, y);
 
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/xpos", xpos);
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/ypos", ypos);
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/run", run / 8);
-        OSCHandler.Instance.SendMessageToClient("pd", "/unity/grounded", "ready");
+        OSCHandler.Instance.SendMessageToClient("pd", "/unity/run", 1 - (Math.Abs(run) / 10));
+
+        if (coll.onGround && !isOnGround)
+        {
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/grounded", "ready");
+            isOnGround = true;
+        }
+        else if (!coll.onGround && isOnGround)
+        {
+            OSCHandler.Instance.SendMessageToClient("pd", "/unity/grounded", "ready");
+            isOnGround = false;
+        }
 
         Walk(dir);
         anim.SetHorizontalMovement(x, y, rb.velocity.y);

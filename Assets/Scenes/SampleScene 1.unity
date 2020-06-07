@@ -4537,7 +4537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213030893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.1, y: -2.19, z: 0}
+  m_LocalPosition: {x: -9.38, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 205110260}
@@ -4570,6 +4570,7 @@ MonoBehaviour:
   wallJumped: 0
   wallSlide: 0
   isDashing: 0
+  isOnGround: 1
   side: 1
   dashParticle: {fileID: 786101203}
   jumpParticle: {fileID: 708599380}

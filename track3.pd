@@ -1,4 +1,4 @@
-#N canvas 1015 344 830 496 10;
+#N canvas 1069 461 830 496 10;
 #X obj 14 111 splitphase;
 #X obj 356 184 * 3;
 #X obj 397 185 * 3;
@@ -513,14 +513,14 @@
 #X restore 14 185 pd texturesource;
 #X msg 160 137 gravel;
 #X obj 291 19 hsl 128 15 0 1 0 1 walkspeed empty walkspeed 38 7 1 8
--262144 -1 -1 9100 1;
+-262144 -1 -1 12700 1;
 #X obj 482 184 * 1;
 #X obj 356 232 s~ n1;
 #X obj 397 232 s~ n2;
 #X obj 438 232 s~ n3;
 #X obj 482 232 s~ a1;
 #X obj 291 40 hsl 128 15 0 1 0 1 \$0-heel \$0-heelf heel 38 7 1 8 -262144
--1 -1 6350 1;
+-1 -1 6386 1;
 #X obj 356 162 r \$0-heel;
 #X obj 397 141 r \$0-roll;
 #X obj 438 162 r \$0-ball;
@@ -528,7 +528,7 @@
 #X obj 291 60 hsl 128 15 0 1 0 1 \$0-roll empty roll 38 7 1 8 -262144
 -1 -1 2200 1;
 #X obj 291 80 hsl 128 15 0 1 0 1 \$0-ball \$0-ballf ball 38 7 1 8 -262144
--1 -1 6350 1;
+-1 -1 6314 1;
 #X obj 356 206 sig~;
 #X obj 397 208 sig~;
 #X obj 438 207 sig~;
@@ -1323,8 +1323,10 @@
 #X obj 160 112 loadbang;
 #X obj 38 299 outlet~;
 #X text 162 291 ASPress Walk 2;
-#X obj 12 70 inlet run;
+#X obj 14 62 inlet run;
 #X obj 667 47 inlet run;
+#X floatatom 94 66 5 0 0 0 - - -;
+#X floatatom 96 94 5 0 0 0 - - -;
 #X connect 0 0 23 0;
 #X connect 0 1 27 0;
 #X connect 1 0 19 0;
@@ -1345,6 +1347,7 @@
 #X connect 23 0 4 0;
 #X connect 24 0 25 1;
 #X connect 25 0 42 0;
+#X connect 26 0 46 0;
 #X connect 27 0 24 0;
 #X connect 29 0 30 0;
 #X connect 29 0 31 0;
@@ -1361,4 +1364,5 @@
 #X connect 40 0 33 0;
 #X connect 41 0 5 0;
 #X connect 44 0 0 0;
+#X connect 44 0 47 0;
 #X connect 45 0 29 0;
