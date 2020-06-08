@@ -1,4 +1,4 @@
-#N canvas 231 450 830 496 12;
+#N canvas 433 360 830 496 12;
 #X obj 14 99 splitphase;
 #X obj 356 186 * 3;
 #X obj 397 187 * 3;
@@ -533,7 +533,7 @@
 #X obj 397 212 sig~;
 #X obj 438 211 sig~;
 #X obj 481 212 sig~;
-#N canvas 43 30 386 285 foot 0;
+#N canvas 391 409 386 285 foot 0;
 #X obj 0 96 clip~ 0 0.33333;
 #X obj 265 96 clip~ 0.666666 1;
 #X obj 0 144 *~ 3;
@@ -1331,6 +1331,8 @@
 #X floatatom 523 37 5 0 0 0 - - -;
 #X msg 328 4 0;
 #X text 411 3 manual walking controls;
+#X text 3 30 walking speed from Unity;
+#X text 625 21 walking speed from Unity;
 #X connect 0 0 23 0;
 #X connect 0 1 26 0;
 #X connect 1 0 19 0;
