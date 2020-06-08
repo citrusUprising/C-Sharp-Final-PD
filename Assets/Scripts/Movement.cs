@@ -78,6 +78,7 @@ public class Movement : MonoBehaviour
         foreach (KeyValuePair<string, ServerLog> item in servers) {
             // If we have received at least one packet,
             // show the last received from the log in the Debug console
+            Debug.Log(item.Value.log.Count);
             if (item.Value.log.Count > 0) {
                 int lastPacketIndex = item.Value.packets.Count - 1;
 
