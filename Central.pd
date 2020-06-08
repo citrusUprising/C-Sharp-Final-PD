@@ -1,4 +1,4 @@
-#N canvas 1059 137 1277 695 12;
+#N canvas 2300 115 1277 608 12;
 #X msg 13 64 \; pd dsp \$1;
 #N canvas 877 552 546 368 oscSend 0;
 #X msg 158 207 disconnect;
@@ -95,7 +95,7 @@
 #X obj 477 387 dac~;
 #X obj 976 292 dac~;
 #X obj 810 37 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 10400 1;
+-1 -1 12700 1;
 #X obj 702 500 tabwrite~ array_waves;
 #X obj 948 438 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -665,7 +665,7 @@
 #X obj 608 318 s~ fourierTrans;
 #X obj 189 302 r~ fourierTrans;
 #X obj 1093 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X msg 1093 165 \$1 100;
 #X obj 1093 199 line~;
 #X obj 976 260 *~;
@@ -684,7 +684,7 @@
 #X floatatom 305 450 5 0 0 0 - - -;
 #X obj 58 406 env~ 8192;
 #X obj 13 3 r osctrig;
-#X obj 13 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 13 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X text 833 37 Universal Volume;
 #X text 910 153 footsteps;
