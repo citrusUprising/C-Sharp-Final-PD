@@ -90,7 +90,7 @@ public class Movement : MonoBehaviour
                 // countText.text = item.Value.packets [lastPacketIndex].Address.ToString ();
 				// countText.text += item.Value.packets [lastPacketIndex].Data [0].ToString ();
                 particleSpeed = (float)item.Value.packets [lastPacketIndex].Data [0];
-                particleSize = (float)item.Value.packets [lastPacketIndex].Data [1];
+                particleSize = (float)item.Value.packets [lastPacketIndex].Data [0];
             }
         }
         // *************
@@ -126,6 +126,7 @@ public class Movement : MonoBehaviour
 
         var main = ps.main;
         main.simulationSpeed = particleSpeed / 40;
+        main.startSize = (float)((particleSize - 26) * .015);
 
         Walk(dir);
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
