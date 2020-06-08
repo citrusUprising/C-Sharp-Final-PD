@@ -48,6 +48,8 @@ public class Movement : MonoBehaviour
     public ParticleSystem slideParticle;
 
     public Text countText;
+    ParticleSystem ps;
+    private float particleSpeed;
     //************* Need to setup this server dictionary...
     Dictionary<string, ServerLog> servers = new Dictionary<string, ServerLog> ();
     //*************
@@ -66,6 +68,7 @@ public class Movement : MonoBehaviour
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
+        ps = GameObject.Find("Snow").GetComponent<ParticleSystem>();
     }
 
     void FixedUpdate()
@@ -83,8 +86,9 @@ public class Movement : MonoBehaviour
                 int lastPacketIndex = item.Value.packets.Count - 1;
 
                 //get address and data packet
-                countText.text = item.Value.packets [lastPacketIndex].Address.ToString ();
-				countText.text += item.Value.packets [lastPacketIndex].Data [0].ToString ();
+                // countText.text = item.Value.packets [lastPacketIndex].Address.ToString ();
+				// countText.text += item.Value.packets [lastPacketIndex].Data [0].ToString ();
+                particleSpeed = (float)item.Value.packets [lastPacketIndex].Data [0];
             }
         }
         // *************
@@ -118,7 +122,8 @@ public class Movement : MonoBehaviour
             isOnGround = false;
         }
 
-
+        var main = ps.main;
+        main.simulationSpeed = particleSpeed / 40;
 
         Walk(dir);
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
