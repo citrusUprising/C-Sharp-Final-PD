@@ -50,6 +50,7 @@ public class Movement : MonoBehaviour
     public Text countText;
     ParticleSystem ps;
     private float particleSpeed;
+    private float particleSize;
     //************* Need to setup this server dictionary...
     Dictionary<string, ServerLog> servers = new Dictionary<string, ServerLog> ();
     //*************
@@ -81,7 +82,7 @@ public class Movement : MonoBehaviour
         foreach (KeyValuePair<string, ServerLog> item in servers) {
             // If we have received at least one packet,
             // show the last received from the log in the Debug console
-            Debug.Log(item.Value.log.Count);
+            //Debug.Log(item.Value.log.Count);
             if (item.Value.log.Count > 0) {
                 int lastPacketIndex = item.Value.packets.Count - 1;
 
@@ -89,6 +90,7 @@ public class Movement : MonoBehaviour
                 // countText.text = item.Value.packets [lastPacketIndex].Address.ToString ();
 				// countText.text += item.Value.packets [lastPacketIndex].Data [0].ToString ();
                 particleSpeed = (float)item.Value.packets [lastPacketIndex].Data [0];
+                particleSize = (float)item.Value.packets [lastPacketIndex].Data [1];
             }
         }
         // *************
