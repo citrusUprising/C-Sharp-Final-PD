@@ -1,4 +1,4 @@
-#N canvas 617 349 830 496 12;
+#N canvas 231 450 830 496 12;
 #X obj 14 99 splitphase;
 #X obj 356 186 * 3;
 #X obj 397 187 * 3;
@@ -512,23 +512,23 @@
 #X connect 8 0 1 0;
 #X restore 14 207 pd texturesource;
 #X msg 160 137 gravel;
-#X obj 291 19 hsl 128 15 0 1 0 1 walkspeed empty walkspeed 38 7 1 8
--262144 -1 -1 12700 1;
+#X obj 242 79 hsl 128 15 0 1 0 1 walkspeed empty walkspeed 38 7 1 8
+-262144 -1 -1 5600 1;
 #X obj 482 186 * 1;
 #X obj 356 241 s~ n1;
 #X obj 397 241 s~ n2;
 #X obj 438 241 s~ n3;
 #X obj 482 241 s~ a1;
-#X obj 291 40 hsl 128 15 0 1 0 1 \$0-heel \$0-heelf heel 38 7 1 8 -262144
--1 -1 6350 1;
+#X obj 242 100 hsl 128 15 0 1 0 1 \$0-heel \$0-heelf heel 38 7 1 8
+-262144 -1 -1 6350 1;
 #X obj 356 159 r \$0-heel;
 #X obj 397 133 r \$0-roll;
 #X obj 438 159 r \$0-ball;
 #X obj 481 132 r \$0-amp;
-#X obj 291 60 hsl 128 15 0 1 0 1 \$0-roll empty roll 38 7 1 8 -262144
+#X obj 242 120 hsl 128 15 0 1 0 1 \$0-roll empty roll 38 7 1 8 -262144
 -1 -1 2200 1;
-#X obj 291 80 hsl 128 15 0 1 0 1 \$0-ball \$0-ballf ball 38 7 1 8 -262144
--1 -1 6350 1;
+#X obj 242 140 hsl 128 15 0 1 0 1 \$0-ball \$0-ballf ball 38 7 1 8
+-262144 -1 -1 6350 1;
 #X obj 356 210 sig~;
 #X obj 397 212 sig~;
 #X obj 438 211 sig~;
@@ -1326,6 +1326,11 @@
 #X text 182 295 Walk code from Designing Sound;
 #X text 182 312 Applied Scientific Press;
 #X text 182 328 http://aspress.co.uk/sd/practical26.html;
+#X msg 367 4 0.5;
+#X floatatom 189 32 5 0 0 0 - - -;
+#X floatatom 523 37 5 0 0 0 - - -;
+#X msg 328 4 0;
+#X text 411 3 manual walking controls;
 #X connect 0 0 23 0;
 #X connect 0 1 26 0;
 #X connect 1 0 19 0;
@@ -1364,3 +1369,9 @@
 #X connect 41 0 0 0;
 #X connect 41 0 43 0;
 #X connect 42 0 27 0;
+#X connect 47 0 48 0;
+#X connect 47 0 49 0;
+#X connect 48 0 0 0;
+#X connect 49 0 27 0;
+#X connect 50 0 48 0;
+#X connect 50 0 49 0;
