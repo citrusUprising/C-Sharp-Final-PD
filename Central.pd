@@ -1,4 +1,4 @@
-#N canvas 1059 137 1277 695 12;
+#N canvas 544 104 1277 695 12;
 #X msg 13 64 \; pd dsp \$1;
 #N canvas 877 552 546 368 oscSend 0;
 #X msg 158 207 disconnect;
@@ -79,7 +79,7 @@
 #X connect 24 0 23 0;
 #X connect 30 0 12 0;
 #X connect 31 0 29 0;
-#X restore 15 156 pd oscRecieve;
+#X restore 15 157 pd oscRecieve;
 #X text 215 536 creation arguments are OSC address;
 #X text 197 496 set message to change OSC address;
 #X obj 62 536 oscformat PD message;
