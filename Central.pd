@@ -94,8 +94,8 @@
 #X obj 988 210 *~;
 #X obj 477 387 dac~;
 #X obj 976 292 dac~;
-#X obj 810 77 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 400 1;
+#X obj 808 81 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 10400 1;
 #X obj 702 500 tabwrite~ array_waves;
 #X obj 948 438 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
