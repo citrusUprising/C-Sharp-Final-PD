@@ -1,4 +1,4 @@
-#N canvas 1053 345 1087 525 12;
+#N canvas 306 80 1277 695 12;
 #X msg 13 64 \; pd dsp \$1;
 #N canvas 877 552 546 368 oscSend 0;
 #X msg 158 207 disconnect;
@@ -80,24 +80,24 @@
 #X connect 30 0 12 0;
 #X connect 31 0 29 0;
 #X restore 15 155 pd oscRecieve;
-#X text 215 414 creation arguments are OSC address;
-#X text 197 374 set message to change OSC address;
-#X obj 62 414 oscformat PD message;
-#X msg 94 375 set PD message;
-#X obj 62 449 s oscOut;
+#X text 215 536 creation arguments are OSC address;
+#X text 197 496 set message to change OSC address;
+#X obj 62 536 oscformat PD message;
+#X msg 94 497 set PD message;
+#X obj 62 571 s oscOut;
 #X text 94 5 Turns sound on and off;
 #X text 105 108 Sends and recieves messages to and from Unity;
 #X obj 531 198 track1;
 #X obj 623 198 track2;
-#X obj 790 146 track3;
+#X obj 988 152 track3;
 #X obj 577 265 *~;
-#X obj 801 219 *~;
-#X obj 478 338 dac~;
-#X obj 789 301 dac~;
-#X obj 715 92 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 9100 1;
-#X obj 578 352 tabwrite~ array_waves;
-#X obj 857 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 988 210 *~;
+#X obj 477 387 dac~;
+#X obj 976 292 dac~;
+#X obj 810 37 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 702 500 tabwrite~ array_waves;
+#X obj 948 438 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array array_waves 2000 float 1;
@@ -405,15 +405,15 @@
 0.00335514 0.00342748 0.00349871 0.00356893 0.00363804 0.00370585 0.00377247
 0.00383766 0.00390143;
 #X coords 0 1 1999 -1 200 100 1 0 0;
-#X restore 802 379 graph;
-#X obj 857 331 metro 100;
-#X text 874 287 Turns on the waveform display;
+#X restore 893 527 graph;
+#X obj 948 479 metro 100;
+#X text 965 435 Turns on the waveform display;
 #X obj 562 145 r osctrig;
 #X obj 491 145 r oscxpos;
 #X obj 632 145 r oscypos;
-#X obj 906 111 r oscground;
-#X obj 790 111 r oscrun;
-#X obj 490 278 r oscdash;
+#X obj 1093 102 r oscground;
+#X obj 999 119 r oscrun;
+#X obj 489 327 r oscdash;
 #N canvas 75 139 1251 594 distortion 0;
 #X obj 131 35 inlet dash;
 #X obj 421 543 outlet~;
@@ -585,7 +585,7 @@
 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
 #X coords 0 1 1000 0.01 500 250 1 0 0;
 #X restore 702 306 graph;
-#X msg 244 72 \; Standard const 1;
+#X msg 554 61 \; Standard const 1;
 #X obj 499 386 tabread~ Standard;
 #X obj 347 364 r~ stime;
 #X obj 61 215 s~ stime;
@@ -595,14 +595,14 @@
 #X floatatom 544 434 5 0 0 0 - - -;
 #X obj 347 436 *~;
 #X floatatom 387 440 5 0 0 0 - - -;
-#X obj 212 146 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 198 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 144 394 pack f f;
 #X msg 144 420 \$2;
-#X obj 188 253 select 0 1;
-#X obj 211 228 mod 2;
-#X obj 211 203 f;
-#X obj 273 203 + 1;
+#X obj 201 282 select 0 1;
+#X obj 224 257 mod 2;
+#X obj 224 232 f;
+#X obj 286 232 + 1;
 #X msg 208 321 0;
 #X msg 244 320 1;
 #X msg 117 507 0;
@@ -615,7 +615,7 @@
 #X msg 621 413 1;
 #X msg 205 508 0;
 #X msg 247 508 1;
-#X obj 211 179 metro 1000;
+#X obj 224 208 metro 1000;
 #X connect 0 0 7 0;
 #X connect 2 0 11 1;
 #X connect 4 0 5 0;
@@ -661,31 +661,33 @@
 #X connect 40 0 37 0;
 #X connect 41 0 37 0;
 #X connect 42 0 28 0;
-#X restore 490 304 pd distortion;
-#X obj 550 399 s~ fourierTrans;
-#X obj 189 180 r~ fourierTrans;
-#X obj 906 147 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X msg 906 174 \$1 100;
-#X obj 906 208 line~;
-#X obj 789 269 *~;
-#X obj 827 249 /~ 8;
+#X restore 489 353 pd distortion;
+#X obj 608 318 s~ fourierTrans;
+#X obj 189 302 r~ fourierTrans;
+#X obj 1093 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X msg 1093 165 \$1 100;
+#X obj 1093 199 line~;
+#X obj 976 260 *~;
+#X obj 1014 240 /~ 8;
 #X obj 578 234 /~ 8;
-#X obj 59 253 bp~ 100 50;
-#X obj 142 254 bp~ 200 50;
-#X obj 224 253 bp~ 300 50;
-#X obj 306 252 bp~ 400 50;
-#X obj 141 285 env~ 8192;
-#X obj 224 284 env~ 8192;
-#X obj 305 283 env~ 8192;
-#X floatatom 58 333 5 0 0 0 - - -;
-#X floatatom 141 323 5 0 0 0 - - -;
-#X floatatom 223 327 5 0 0 0 - - -;
-#X floatatom 305 328 5 0 0 0 - - -;
-#X obj 58 284 env~ 8192;
+#X obj 59 375 bp~ 100 50;
+#X obj 142 376 bp~ 200 50;
+#X obj 224 375 bp~ 300 50;
+#X obj 306 374 bp~ 400 50;
+#X obj 141 407 env~ 8192;
+#X obj 224 406 env~ 8192;
+#X obj 305 405 env~ 8192;
+#X floatatom 58 455 5 0 0 0 - - -;
+#X floatatom 141 445 5 0 0 0 - - -;
+#X floatatom 223 449 5 0 0 0 - - -;
+#X floatatom 305 450 5 0 0 0 - - -;
+#X obj 58 406 env~ 8192;
 #X obj 13 3 r osctrig;
 #X obj 13 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
+#X text 833 37 Universal Volume;
+#X text 910 153 footsteps;
 #X connect 5 0 7 0;
 #X connect 6 0 5 0;
 #X connect 10 0 37 0;
