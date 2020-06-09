@@ -82,13 +82,10 @@ public class Movement : MonoBehaviour
         foreach (KeyValuePair<string, ServerLog> item in servers) {
             // If we have received at least one packet,
             // show the last received from the log in the Debug console
-            //Debug.Log(item.Value.log.Count);
             if (item.Value.log.Count > 0) {
                 int lastPacketIndex = item.Value.packets.Count - 1;
 
                 //get address and data packet
-                // countText.text = item.Value.packets [lastPacketIndex].Address.ToString ();
-				// countText.text += item.Value.packets [lastPacketIndex].Data [0].ToString ();
                 particleSpeed = (float)item.Value.packets [lastPacketIndex].Data [0];
                 particleSize = (float)item.Value.packets [lastPacketIndex].Data [0];
             }
@@ -103,9 +100,10 @@ public class Movement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
         float xRaw = Input.GetAxisRaw("Horizontal");
         float yRaw = Input.GetAxisRaw("Vertical");
-        float xpos = rb.position.x;
-        float ypos = rb.position.y;
-        float run = rb.velocity.x;
+
+        float xpos = rb.position.x;     // Player x position
+        float ypos = rb.position.y;     // Player y position
+        float run = rb.velocity.x;      // Player x velocity
         if (run > 7) run = 7;
         Vector2 dir = new Vector2(x, y);
 
@@ -113,6 +111,7 @@ public class Movement : MonoBehaviour
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/ypos", ypos);
         OSCHandler.Instance.SendMessageToClient("pd", "/unity/run", 1 - (Math.Abs(run) / 10));
 
+        // Only play walking noise if player is on the ground
         if (coll.onGround && !isOnGround)
         {
             OSCHandler.Instance.SendMessageToClient("pd", "/unity/grounded", "ready");
@@ -188,6 +187,7 @@ public class Movement : MonoBehaviour
                 WallJump();
         }
 
+        // Play dash distortion when player dashed.
         if (Input.GetButtonDown("Fire1") && !hasDashed)
         {
             OSCHandler.Instance.SendMessageToClient("pd", "/unity/dash", 100);
